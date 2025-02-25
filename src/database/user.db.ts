@@ -5,8 +5,8 @@ type User = {
   password: string;
   phoneNumber: string;
   address: string;
-  role: UserRoleEnum;
-  orderedFoods: ObjectId[];
+  role?: UserRoleEnum;
+  orderedFoods?: ObjectId[];
   ttl: Date;
   isVerified: Boolean;
   createdAt: Date;

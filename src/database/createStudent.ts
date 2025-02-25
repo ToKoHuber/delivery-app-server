@@ -148,10 +148,10 @@ export async function getStudent() {
 
     const findAllStudents = {};
     const findStudentByName = {
-      $and: [{ name: "Muugii" }],
+      name: "Muugii",
     };
     const findAllMaleStudents = {
-      $and: [{ gender: "male" }],
+      gender: "male",
     };
     const findStudentsOlderThan25 = {
       age: { $gt: 25 },
@@ -169,7 +169,7 @@ export async function getStudent() {
       $and: [{ gpa: { $gte: 3 } }, { gpa: { $lte: 4 } }],
     };
     const student = await collection
-      .find(findStundetsGPABetween3_4)
+      .find(findStudentByName)
       .limit(10)
       .toArray();
     return student;

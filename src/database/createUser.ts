@@ -34,25 +34,3 @@ export async function createUser() {
     console.log(e);
   }
 }
-
-export async function getFoods() {
-  try {
-    configDotenv();
-    const uri = process.env.MONGODB_URL || "";
-
-    console.log("uri", uri);
-    const client = new MongoClient(uri);
-
-    await client.connect();
-    const database = client.db("food_delivery");
-    const collection = database.collection("food");
-
-    // const findQuery = {
-    //   $and: [{ "imdb.rating": { $gt: imdb } }, { year: { $gt: year } }],
-    // };
-    const food = await collection.find().limit(10).toArray();
-    return food;
-  } catch (e) {
-    console.log(e);
-  }
-}

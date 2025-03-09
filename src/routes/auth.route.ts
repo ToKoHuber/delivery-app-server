@@ -5,10 +5,12 @@ import { Router } from "express";
 //   UserInfo,
 // } from "../controllers/user.controller";
 
-const userRoute = Router();
+const authRouth = Router();
 
-userRoute.post("/register", Register);
-userRoute.get("/profile", UserInfo);
-userRoute.put("/profile", UpdateProfile);
-
-export { userRoute };
+authRouth.get("/refresh", Register);
+authRouth.post("/sign-up", UserInfo);
+authRouth.post("/sign-in", UserInfo);
+authRouth.post("/reset-password-request", UserInfo);
+authRouth.get("/verify-reset-password-request", UserInfo);
+authRouth.post("/reset-password", UpdateProfile);
+export { authRouth };

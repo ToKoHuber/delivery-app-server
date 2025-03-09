@@ -1,12 +1,11 @@
 import { configDotenv } from "dotenv";
 import mongoose from "mongoose";
 configDotenv();
-
-export const connectMongoDB = async () => {
+export const connectMongoDb = async () => {
   try {
     await mongoose.connect(process.env.MONGODB_URL || "");
-    console.log("Mongodb tei amjilttai holbogdloo");
+    console.log("mongodb amjilttai holbogdloo");
   } catch (error) {
-    console.log("Mongodb tei holbogdohod aldaa garlaa", error);
+    console.log("mongodb holbogdhod aldaa garlaa");
   }
 };

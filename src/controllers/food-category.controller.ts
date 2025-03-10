@@ -6,7 +6,7 @@ export const createFoodCategory = async (req: Request, res: Response) => {
     const categoryData = req.body;
     const newCategory = await foodCategoryModel.create(categoryData);
     res
-      .status(200)
+      .status(201)
       .json({ message: "Successfully created category", newCategory });
   } catch (error) {
     res.status(500).json({ message: "Error in createFoodCategory", error });
@@ -18,7 +18,7 @@ export const getAllFoodCategory = async (req: Request, res: Response) => {
     const getCategory = await foodCategoryModel.find();
     res.status(200).json({
       message: "All categories",
-      length: foodCategoryModel.length,
+      length: getCategory.length,
       getCategory,
     });
   } catch (error) {

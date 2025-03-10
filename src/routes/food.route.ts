@@ -1,14 +1,18 @@
 import { Router } from "express";
-// import {
-//   Register,
-//   UpdateProfile,
-//   UserInfo,
-// } from "../controllers/user.controller";
+import {
+  createFood,
+  deleteFood,
+  getAllFoods,
+  getFoodById,
+  updateFood,
+} from "../controllers/food.controller";
 
 const foodRouth = Router();
 
-foodRouth.get("/:foodId", Register);
-foodRouth.post("/:foodId", UserInfo);
-foodRouth.post("/:foodId", UserInfo);
+foodRouth.get("/:foodId", getFoodById);
+foodRouth.post("/", createFood);
+foodRouth.get("/", getAllFoods);
+foodRouth.put("/:foodId", updateFood);
+foodRouth.delete("/:foodId", deleteFood);
 
 export { foodRouth };

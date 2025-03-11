@@ -1,15 +1,11 @@
 import { Router } from "express";
-// import {
-//   Register,
-//   UpdateProfile,
-//   UserInfo,
-// } from "../controllers/user.controller";
+import { createOrder, getAllOrder } from "../controllers/food-order.controller";
 
 const foodOrderRouth = Router();
 
-foodOrderRouth.post("/", Register);
-foodOrderRouth.get("/", UserInfo);
+foodOrderRouth.post("/", createOrder);
+foodOrderRouth.get("/", getAllOrder);
 foodOrderRouth.get("/:userId", UserInfo);
-foodOrderRouth.patch("/:foodOrderId", UserInfo);
+foodOrderRouth.put("/:foodOrderId", UserInfo);
 
 export { foodOrderRouth };

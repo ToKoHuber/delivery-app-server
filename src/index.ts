@@ -12,6 +12,7 @@ connectMongoDb();
 const app = express();
 const port = 4000;
 app.use(bodyParser.json());
+app.use(cors());
 // app.use("/user", authRouth);
 app.use("/food", foodRouth);
 app.use("/food-category", foodCategoryRouth);

@@ -26,13 +26,15 @@ export const getFoodById = async (req: Request, res: Response) => {
 };
 export const getAllFoods = async (req: Request, res: Response) => {
   try {
-    const getFoods = await foodModel.find();
+    const getFoods = await foodModel.find().populate("category");
+    console.log("suceessss", getFoods);
     res.status(200).json({
       message: "All foods",
       length: getFoods.length,
       getFoods,
     });
   } catch (error) {
+    console.log(error);
     res.status(500).json({ message: "Error  createFood", error });
   }
 };

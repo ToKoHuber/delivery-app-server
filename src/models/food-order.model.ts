@@ -17,6 +17,6 @@ const FoodOrderSchema: Schema = new Schema(
 );
 
 export default mongoose.model<FoodOrderSchemaType>(
-  "FoodOrder",
+  "FoodsOrder",
   FoodOrderSchema
 );

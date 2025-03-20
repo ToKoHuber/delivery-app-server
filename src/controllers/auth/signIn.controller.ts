@@ -11,7 +11,7 @@ export const signIn = async (req: Request, res: Response) => {
     }
     const user = await userModel.findOne({ email });
     if (!user) {
-      res.status(404).json({ message: "Burtgelgvi user baina" });
+      res.status(401).json({ message: "Burtgelgvi user baina" });
       return;
     }
 

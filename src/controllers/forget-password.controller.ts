@@ -3,9 +3,8 @@ import jwt from "jsonwebtoken";
 import userModel from "../models/user.model";
 import { sendEmail } from "../util/send-email";
 
-const jwtSecret = process.env.JWT_SECRET;
-
 export const forgetPassword = async (req: Request, res: Response) => {
+  const jwtSecret = process.env.JWT_SECRET;
   try {
     const { email } = req.body;
     if (!email) {

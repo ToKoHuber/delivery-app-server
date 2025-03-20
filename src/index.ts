@@ -6,11 +6,14 @@ import { foodRouth } from "./routes/food.route";
 import { foodOrderRouth } from "./routes/food-order.route";
 import foodCategoryRouth from "./routes/food-category.route";
 import { connectMongoDb } from "./database/db";
+import { configDotenv } from "dotenv";
 
 connectMongoDb();
+configDotenv();
 
 const app = express();
 const port = 4000;
+
 app.use(bodyParser.json());
 app.use(cors());
 app.use("/auth", authRouth);
